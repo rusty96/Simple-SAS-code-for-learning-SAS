@@ -1,0 +1,5 @@
+data myclass;
+ set sashelp.class; // set the class name i.e., your class name
+ run;
+ proc print data=myclass; // code for printing
+ run;
