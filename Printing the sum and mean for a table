@@ -1,0 +1,8 @@
+data work.shoes;
+    set sashelp.shoes; //enter your class name or file name
+    NetSales=Sales-Returns;
+run;
+proc means data=work.shoes mean sum;// for calculating sum and mean
+var NetSales;
+    class region;
+run;
