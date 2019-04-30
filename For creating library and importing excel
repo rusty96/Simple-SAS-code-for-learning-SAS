@@ -1,0 +1,5 @@
+libname np xlsx "Filepath";
+options validvarname=v7;
+proc contents data=np.parks;
+run;
+libname np clear;
