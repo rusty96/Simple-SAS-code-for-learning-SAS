@@ -1,0 +1,6 @@
+proc import datafile="Filepath" dbms=csv
+out=Filename replace;
+run;
+
+proc contents data=Filename;
+run;
