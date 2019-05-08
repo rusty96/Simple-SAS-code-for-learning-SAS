@@ -1,0 +1,17 @@
+proc sql;
+select Season, Name, s.Basin, BasinName, MaxWindMPH 
+    from pg1.storm_summary as s 
+        inner join pg1.storm_basincodes as b 
+        on s.basin=b.basin 
+    order by Season desc, Name;
+quit; 
+
+The lowercase Basin values are not in the results because they are not matching values. To fix this, you can use the UPCASE function in the ON expression to change the values to uppercase. 
+
+proc sql;
+select Season, Name, s.Basin, BasinName, MaxWindMPH 
+    from pg1.storm_summary as s 
+        inner join pg1.storm_basincodes as b 
+        on upcase(s.basin)=b.basin 
+    order by Season desc, Name;
+quit; 
