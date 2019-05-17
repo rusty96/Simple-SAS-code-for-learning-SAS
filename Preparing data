@@ -1,0 +1,9 @@
+data storm_cat5;
+    set pg1.storm_summary;
+    where StartDate>="01jan2000"d and MaxWindMPH>=156; 
+    keep Season Basin Name Type MaxWindMPH; 
+run;
+libname out "path-to-EPG194/output";
+data out.storm_cat5;
+. . .
+run;
